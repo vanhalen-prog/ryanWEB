@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SkateHub Login Docente</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #9d63cb;
+        }
+
+        .login-container {
+            width: 380px;
+            height: 448px;
+            background-color: #ecb653;
+            border: 2px solid #ecb653;
+            border-radius: 6px;
+
+        }
+
+        input {
+            width: 240px;
+            height: 50px;
+            background-color: #9d63cb;
+            border: 3px solid #9d63cb;
+            border-radius: 6px;
+        }
+
+        input::placeholder {
+            color: white;
+        }
+
+        button {
+            width: 99px;
+            height: 40px;
+            border: 3px solid #9d63cb;
+            border-radius: 6px;
+            background-color: #9d63cb;
+            color: white;
+            cursor: pointer;
+        }
+
+        h2 {
+            font-size: 25px;
+            font-family: Verdana;
+        }
+
+        img {
+            width: 110px;
+            height: 100px;
+        }
+
+        .mens {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 12px;
+            color: white;
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="login-container">
+            <div class="formulario">
+                <br><br>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Aphex_Twin_logo.svg/2048px-Aphex_Twin_logo.svg.png">
+                <h2> Login: </h2>
+                <form onsubmit="return validarLogin()">
+                    <input type="text" id="usuario" placeholder="Usuario" required><br><br>
+                    <input type="password" id="senha" placeholder="Senha" required><br><br>
+                    <button type="submit">Entrar</button>
+                    <div class="mens" id="mensagem"></div>
+                </form>
+            </div>
+        </div>
+    </center>
+
+    <script>
+        function validarLogin() {
+            const usuario = document.getElementById("usuario").value;
+            const senha = document.getElementById("senha").value;
+            const mensagem = document.getElementById("mensagem");
+
+            if (usuario === "jensen" && senha === "123") {
+                window.alert("Correto!");
+
+                setTimeout(() => {
+                    window.location.href = "depois.html"
+                }, 1000);
+                return false;
+            } else {
+                window.alert("Usuário ou senha incorreto. Tente novamente.");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
